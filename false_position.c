@@ -15,17 +15,15 @@ int main(int argc, char *argv[])
 
 	int i = 0;
 	double x = a;
-	while (range(equation(x), 0.0) >= ERROR)
-	{
-		if (is_negative(equation(a)) != is_negative(equation(b)))
-		{
-			x = (a*equation(b)-b*equation(a))/(equation(b)-equation(a));
+
+	while (range(equation(x), 0.0) >= ERROR) {
+		if (is_negative(equation(a)) != is_negative(equation(b))) {
+			x = (a * equation(b) - b * equation(a)) / (equation(b) - equation(a));
 
 			if (is_negative(equation(a)) == is_negative(equation(x)))
 				a = x;
 			else
 				b = x;
-
 		}
 		i++;
 	}
@@ -44,16 +42,15 @@ int main(int argc, char *argv[])
 
 double equation(double x)
 {
-	return pow(x, 5.0)-4.0*pow(x, 2.0)+2.0;
+	return pow(x, 5.0) - 4.0 * pow(x, 2.0) + 2.0;
 }
 
 double range(double a, double b)
 {
-	return fabs(b-a);
+	return fabs(b - a);
 }
 
 int is_negative(double a)
 {
 	return !!signbit(a);
 }
-

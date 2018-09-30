@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
 
 	int i = 0;
 	double x = a;
-	while (range(equation(x), 0.0) >= ERROR)
-	{
+
+	while (range(equation(x), 0.0) >= ERROR) {
 		x = equivalent(x);
 		i++;
 	}
@@ -32,20 +32,19 @@ int main(int argc, char *argv[])
 
 double equation(double x)
 {
-	return x-pow(x, 3.0)-4.0*pow(x, 2.0)+10.0;
+	return x - pow(x, 3.0) - 4.0 * pow(x, 2.0) + 10.0;
 }
 
 double equivalent(double x)
 {
-	return sqrt(x-pow(x, 3.0)+10.0)/2;
+	return sqrt(x - pow(x, 3.0) + 10.0) / 2;
 }
 double range(double a, double b)
 {
-	return fabs(b-a);
+	return fabs(b - a);
 }
 
 int is_negative(double a)
 {
 	return !!signbit(a);
 }
-
