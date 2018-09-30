@@ -10,8 +10,8 @@ double derivative1(double x);
 double derivative2(double x);
 double derivative3(double x);
 
-double(*const equation[])(double) = { equation1, equation2, equation3 };
-double(*const derivative[])(double) = { derivative1, derivative2, derivative3 };
+double (*const equation[])(double) = { equation1, equation2, equation3 };
+double (*const derivative[])(double) = { derivative1, derivative2, derivative3 };
 
 double range(double a, double b);
 int is_negative(double a);
